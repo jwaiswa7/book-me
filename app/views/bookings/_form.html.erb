@@ -1,0 +1,25 @@
+<%= form_with(model: booking, class: "contents") do |form| %>
+  <% if booking.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+        <% booking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.number_field :adult_no %>
+  <%= form.text_field :user_name %>
+  <%= form.text_field :email %>
+  <%= form.text_field :phone_number %>
+  <%= form.date_field :start_on %>
+  <%= form.date_field :end_on %>
+  <%= form.text_area :details %>
+  <%= form.number_field :child_no %>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
