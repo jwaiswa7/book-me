@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_name: MyString
+  email: MyString
+  phone_number: MyString
+  start_on: 2023-02-21
+  end_on: 2023-02-21
+  details: MyText
+  service: one
+  adult_no: 1
+  child_no: 1
+
+two:
+  user_name: MyString
+  email: MyString
+  phone_number: MyString
+  start_on: 2023-02-21
+  end_on: 2023-02-21
+  details: MyText
+  service: two
+  adult_no: 1
+  child_no: 1
