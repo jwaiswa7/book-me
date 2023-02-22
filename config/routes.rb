@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :companies
   resources :bookings
   devise_for :admin_users
   devise_for :users
