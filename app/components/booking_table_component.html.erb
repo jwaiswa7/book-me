@@ -1,0 +1,24 @@
+<table class="w-full">
+  <thead>
+    <tr>
+      <% @header.each do |heading| %>
+        <th><%= heading %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @data.each do | booking| %>
+        <tr>
+          <td><%= booking.user_name %></td>
+          <td><%= booking.phone_number %></td>
+          <td><%= booking.email %></td>
+          <td><%= booking.adult_no %></td>
+          <td><%= booking.child_no %></td>
+          <td><%= booking.start_on %></td>
+          <td><%= booking.end_on %></td>
+          <td><%= link_to "Show this booking", booking, class: "rounded-lg py-2 px-3 bg-blue-600 text-white inline-block font-medium btn-sm" %></td>
+          <td><%= link_to 'Edit this booking', edit_booking_path(booking), class: "rounded-lg py-2 ml-2 px-3 bg-gray-100 inline-block font-medium btn-sm" %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
