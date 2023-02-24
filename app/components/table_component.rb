@@ -5,5 +5,4 @@ class TableComponent < ViewComponent::Base
     @data = data
     @header = header
   end
-
 end

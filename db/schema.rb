@@ -10,74 +10,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_21_114022) do
+ActiveRecord::Schema[7.0].define(version: 20_230_221_114_022) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "admin_users", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.index ["email"], name: "index_admin_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  create_table 'admin_users', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.index ['email'], name: 'index_admin_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_admin_users_on_reset_password_token', unique: true
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.string "user_name"
-    t.string "email"
-    t.string "phone_number"
-    t.date "start_on"
-    t.date "end_on"
-    t.text "details"
-    t.bigint "service_id", null: false
-    t.integer "adult_no"
-    t.integer "child_no"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["service_id"], name: "index_bookings_on_service_id"
+  create_table 'bookings', force: :cascade do |t|
+    t.string 'user_name'
+    t.string 'email'
+    t.string 'phone_number'
+    t.date 'start_on'
+    t.date 'end_on'
+    t.text 'details'
+    t.bigint 'service_id', null: false
+    t.integer 'adult_no'
+    t.integer 'child_no'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['service_id'], name: 'index_bookings_on_service_id'
   end
 
-  create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "contact"
-    t.string "access_key"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_companies_on_name", unique: true
+  create_table 'companies', force: :cascade do |t|
+    t.string 'name'
+    t.string 'address'
+    t.string 'contact'
+    t.string 'access_key'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index %w[name access_key], name: 'index_companies_on_name_and_access_key', unique: true
   end
 
-  create_table "services", force: :cascade do |t|
-    t.string "name"
-    t.bigint "company_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_services_on_company_id"
+  create_table 'services', force: :cascade do |t|
+    t.string 'name'
+    t.bigint 'company_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['company_id'], name: 'index_services_on_company_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone_number"
-    t.bigint "company_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.index ["company_id"], name: "index_users_on_company_id"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'first_name'
+    t.string 'last_name'
+    t.string 'phone_number'
+    t.bigint 'company_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.index ['company_id'], name: 'index_users_on_company_id'
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key "bookings", "services"
-  add_foreign_key "services", "companies"
-  add_foreign_key "users", "companies"
+  add_foreign_key 'bookings', 'services'
+  add_foreign_key 'services', 'companies'
+  add_foreign_key 'users', 'companies'
 end
