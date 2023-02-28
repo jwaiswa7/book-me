@@ -48,7 +48,7 @@ def create_bookings
   service = Service.first
 
   10.times do
-    start_date = Tome.zone.today + rand(9)
+    start_date = Time.zone.today + rand(9)
     end_date = start_date + 1.week
     Booking.create(
       user_name: "John Doe_#{rand(9)}",

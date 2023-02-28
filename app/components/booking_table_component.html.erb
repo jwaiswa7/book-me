@@ -1,4 +1,4 @@
-<table class="w-full">
+<table class="table table-normal w-full">
   <thead>
     <tr>
       <% @header.each do |heading| %>
@@ -16,8 +16,8 @@
           <td><%= booking.child_no %></td>
           <td><%= booking.start_on %></td>
           <td><%= booking.end_on %></td>
-          <td><%= link_to "Show this booking", booking, class: "rounded-lg py-2 px-3 bg-blue-600 text-white inline-block font-medium btn-sm" %></td>
-          <td><%= link_to 'Edit this booking', edit_booking_path(booking), class: "rounded-lg py-2 ml-2 px-3 bg-gray-100 inline-block font-medium btn-sm" %></td>
+          <td><%= link_to "Show this booking", booking, class: "" %></td>
+          <td><%= link_to 'Edit this booking', edit_booking_path(booking), class: "" %></td>
         </tr>
     <% end %>
   </tbody>
