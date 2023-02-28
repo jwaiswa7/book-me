@@ -9,6 +9,7 @@
   <tbody>
     <% @data.each do | booking| %>
         <tr>
+          <td><%= booking.confirmed? %></td>
           <td><%= booking.user_name %></td>
           <td><%= booking.phone_number %></td>
           <td><%= booking.email %></td>

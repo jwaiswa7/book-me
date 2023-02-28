@@ -12,36 +12,40 @@
     </div>
   <% end %>
   <div class="mb-4">
+  <%= form.label :confirmed, class: "block text-grey-darker text-sm font-bold mb-2" %>
+  <%= form.check_box :confirmed,  class: "checkbox checkbox-primary" %>
+</div>
+  <div class="mb-4">
     <%= form.label :user_name, class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.text_field :user_name, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.text_field :user_name,  class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
   </div>
   <div class="mb-4">
     <%= form.label :email, class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.email_field :email,  class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
   </div>
   <div class="mb-4">
     <%= form.label :phone_number, class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.text_field :phone_number, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.text_field :phone_number,  class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
   </div>
   <div class="mb-4">
     <%= form.label :start_on, class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.date_field :start_on, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.date_field :start_on,  class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
   </div>
   <div class="mb-4">
     <%= form.label :end_on, class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.date_field :end_on, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.date_field :end_on,  class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
   </div>
   <div class="mb-4">
     <%= form.label :adult_no, class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.number_field :adult_no, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.number_field :adult_no,  class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
   </div>
   <div class="mb-4">
     <%= form.label :child_no, class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.number_field :child_no, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.number_field :child_no,  class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
   </div>
   <div class="mb-4">
     <%= form.label :details, class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.text_area :details, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.text_area :details,  class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
   </div>
 
   <div class="inline">

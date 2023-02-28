@@ -1,14 +1,32 @@
-<div id="<%= dom_id booking %>">
-    <%= booking.child_no %>
-    <%= booking.adult_no %>
-    <%= booking.start_on %>
-    <%= booking.end_on  %>
-    <%= booking.user_name %>
-    <%= booking.email %>
-    <%= booking.phone_number %>
-    <% if action_name != "show" %>
-    <%= link_to "Show this booking", booking, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this booking', edit_booking_path(booking), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+<div class="card w-96 bg-base-100 shadow-xl" id="<%= dom_id booking %>">
+  <div class="card-body">
+    <h2 class="card-title"><%= booking.user_name %></h2>
+    <div class="flex flex-row">
+      <div class="basis-1/4 font-semibold">Checkin</div>
+      <div class="basis-3/4"><%= booking.start_on %></div>
+    </div>
+    <div class="flex flex-row">
+      <div class="basis-1/4 font-semibold">Checkout</div>
+      <div class="basis-3/4"><%= booking.end_on  %></div>
+    </div>
+    <div class="flex flex-row">
+      <div class="basis-1/4 font-semibold">Email</div>
+      <div class="basis-3/4"><%= booking.email %></div>
+    </div>
+    <div class="flex flex-row">
+      <div class="basis-1/4 font-semibold">Phone number</div>
+      <div class="basis-3/4"><%= booking.phone_number %></div>
+    </div>
+    <div class="flex flex-row">
+      <div class="basis-1/4 font-semibold">Adults</div>
+      <div class="basis-3/4"><%= booking.adult_no %></div>
+    </div>
+    <div class="flex flex-row">
+      <div class="basis-1/4 font-semibold">Children</div>
+      <div class="basis-3/4"><%= booking.child_no %></div>
+    </div>
+    <div class="flex flex-row">
+      <div class="basis-1"><%= booking.details %></div>
+    </div>
+  </div>
 </div>

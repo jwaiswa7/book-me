@@ -10,6 +10,8 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.references :service, null: false, foreign_key: true
       t.integer :adult_no
       t.integer :child_no
+      t.boolean :confirmed
+      
 
       t.timestamps
     end

@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings or /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = current_user.company.bookings
   end
 
   # GET /bookings/1 or /bookings/1.json
@@ -67,7 +67,7 @@ class BookingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def booking_params
-    params.require(:booking).permit(:adult_no, :user_name, :email, :phone_number, :start_on, :end_on, :details,
+    params.require(:booking).permit(:confirmed, :adult_no, :user_name, :email, :phone_number, :start_on, :end_on, :details,
                                     :child_no)
   end
 end

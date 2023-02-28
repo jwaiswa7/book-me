@@ -63,7 +63,6 @@ def create_bookings
   end
 end
 
-create_admin_user
 create_company
 create_user
 create_service
